@@ -141,10 +141,10 @@ def get_route(hostname):
                     #Fill in start
                     print("TTL = %d\trtt=%.0f ms\tIP = %s\tHost:%s" %(ttl, (timeReceived -t)*1000, addr[0], Hostname))
                     #You should add your responses to your lists here and return your list if your destination IP is met
-                    return
                     #Fill in end
                 else:
                     #Fill in start
+                    return
                     print("error")
                     #If there is an exception/error to your if statements, you should append that to your list here
                     #Fill in end
