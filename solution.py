@@ -139,7 +139,7 @@ def get_route(hostname):
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     #Fill in start
-                    print("TTL = %d\trtt=%.0f ms\tIP = %s\tHost:%s" %(ttl, (timeReceived -t)*1000, addr[0], Host))
+                    print("TTL = %d\trtt=%.0f ms\tIP = %s\tHost:%s" %(ttl, (timeReceived -t)*1000, addr[0], Hostname))
                     #You should add your responses to your lists here and return your list if your destination IP is met
                     return tracelist2
                     #Fill in end
