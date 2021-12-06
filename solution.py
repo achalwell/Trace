@@ -95,7 +95,6 @@ def get_route(hostname):
                     #Fill in start
                     tracelist2.append(tracelist1)
                     #You should add the list above to your all traces list
-                    return tracelist2
                     #Fill in end
                 recvPacket, addr = mySocket.recvfrom(1024)
                 timeReceived = time.time()
