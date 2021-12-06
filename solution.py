@@ -87,6 +87,9 @@ def get_route(hostname):
                 whatReady = select.select([mySocket], [], [], timeLeft)
                 howLongInSelect = (time.time() - startedSelect)
                 if whatReady[0] == []: # Timeout
+                    bytes = struct.calcsize("d")
+                    timeSent = struct.unpack("d", recvPacket[28:28 +
+                    bytes])[0]
                     print("TTL = * * * Request timed out.")
                     tracelist1.append("* * * Request timed out.")
                     #Fill in start
@@ -97,6 +100,9 @@ def get_route(hostname):
                 timeReceived = time.time()
                 timeLeft = timeLeft - howLongInSelect
                 if timeLeft <= 0:
+                    bytes = struct.calcsize("d")
+                    timeSent = struct.unpack("d", recvPacket[28:28 +
+                    bytes])[0]
                     print("TTL = * * * Request timed out.")
                     tracelist1.append("* * * Request timed out.")
                     #Fill in start
