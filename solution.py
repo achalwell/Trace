@@ -90,11 +90,12 @@ def get_route(hostname):
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 +
                     bytes])[0]
-                    print("TTL = * * * Request timed out.")
+                    print("TTL = * * * Request timed out.")rint("TTL = %d\trtt=%.0f ms\tIP = %s\tHost:%s" %(ttl, (timeReceived -t)*1000, addr[0], Hostname))
                     tracelist1.append("* * * Request timed out.")
                     #Fill in start
                     tracelist2.append(tracelist1)
                     #You should add the list above to your all traces list
+                    return tracelist2
                     #Fill in end
                 recvPacket, addr = mySocket.recvfrom(1024)
                 timeReceived = time.time()
@@ -103,11 +104,12 @@ def get_route(hostname):
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 +
                     bytes])[0]
-                    print("TTL = * * * Request timed out.")
+                    print("TTL = %d\trtt=%.0f ms\tIP = %s\tHost:%s" %(ttl, (timeReceived -t)*1000, addr[0], Hostname))
                     tracelist1.append("* * * Request timed out.")
                     #Fill in start
                     tracelist2.append(tracelist1)
                     #You should add the list above to your all traces list
+                    return tracelist2
                     #Fill in end
             except timeout:
                 continue
